@@ -30,6 +30,9 @@ def main():
         if not missing_columns:
             df = df[list(COLUMN_MAPPINGS.keys())].rename(columns=COLUMN_MAPPINGS)
 
+            # Add source as Real Intent
+            df["Source"] = "Real Intent"
+
             # Display the resulting dataframe
             st.write("Converted DataFrame:")
             st.write(df)
